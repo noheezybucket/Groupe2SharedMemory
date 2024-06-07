@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSharedMemory", "AppSharedMemory\AppSharedMemory.csproj", "{F203C06F-72C5-44A1-B31F-4D0015C201C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A506B8C-90F0-4239-9B14-C680933AE63E} = {5A506B8C-90F0-4239-9B14-C680933AE63E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetierSharedMemory", "MetierSharedMemory\MetierSharedMemory.csproj", "{5A506B8C-90F0-4239-9B14-C680933AE63E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F203C06F-72C5-44A1-B31F-4D0015C201C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F203C06F-72C5-44A1-B31F-4D0015C201C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F203C06F-72C5-44A1-B31F-4D0015C201C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F203C06F-72C5-44A1-B31F-4D0015C201C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A506B8C-90F0-4239-9B14-C680933AE63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A506B8C-90F0-4239-9B14-C680933AE63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A506B8C-90F0-4239-9B14-C680933AE63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A506B8C-90F0-4239-9B14-C680933AE63E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1C13554-30B9-4892-9510-0F3C01A4E2F1}
+	EndGlobalSection
+EndGlobal
