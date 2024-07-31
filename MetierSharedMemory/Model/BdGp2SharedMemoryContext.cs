@@ -17,5 +17,6 @@ namespace MetierSharedMemory.Model
         public DbSet<Encadreur> encadreurs { get; set; }
 
         public DbSet<Memoire> memoires { get; set; }
+        public DbSet<Td_Erreur> td_Erreurs { get; set; }
     }
 }

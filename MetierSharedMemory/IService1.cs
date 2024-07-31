@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetierSharedMemory.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -19,7 +20,27 @@ namespace MetierSharedMemory
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+
         // TODO: ajoutez vos opérations de service ici
+
+        [OperationContract]
+        List<Encadreur> GetEncadreurs(string Nom, string Prenom, string Specialite);
+
+        [OperationContract]
+        Encadreur GetEncadreur(int? IdEncadreur);
+
+        [OperationContract]
+        List<Encadreur> GetAllEncadreurs();
+
+        [OperationContract]
+        bool DeleteEncadreur(int? IdEncadreur);
+
+        [OperationContract]
+        bool UpdateEncadreur(Encadreur encadreur);
+
+        [OperationContract]
+        bool AddEncadreur(Encadreur encadreur);
+
     }
 
 

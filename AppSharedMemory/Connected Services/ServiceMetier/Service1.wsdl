@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:57072/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:57072/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:57072/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MetierSharedMemory" />
+      <xsd:import schemaLocation="http://localhost:57072/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MetierSharedMemory.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -19,6 +20,42 @@
   <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetEncadreurs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncadreurs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEncadreurs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncadreursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEncadreur_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncadreur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEncadreur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncadreurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllEncadreurs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEncadreurs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllEncadreurs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEncadreursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteEncadreur_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEncadreur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteEncadreur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEncadreurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEncadreur_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEncadreur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEncadreur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEncadreurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddEncadreur_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEncadreur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddEncadreur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEncadreurResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -27,6 +64,30 @@
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncadreurs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEncadreurs" message="tns:IService1_GetEncadreurs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEncadreursResponse" message="tns:IService1_GetEncadreurs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncadreur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEncadreur" message="tns:IService1_GetEncadreur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEncadreurResponse" message="tns:IService1_GetEncadreur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEncadreurs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllEncadreurs" message="tns:IService1_GetAllEncadreurs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllEncadreursResponse" message="tns:IService1_GetAllEncadreurs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEncadreur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteEncadreur" message="tns:IService1_DeleteEncadreur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteEncadreurResponse" message="tns:IService1_DeleteEncadreur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEncadreur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateEncadreur" message="tns:IService1_UpdateEncadreur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateEncadreurResponse" message="tns:IService1_UpdateEncadreur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEncadreur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddEncadreur" message="tns:IService1_AddEncadreur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddEncadreurResponse" message="tns:IService1_AddEncadreur_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -42,6 +103,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncadreurs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEncadreurs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncadreur">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEncadreur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEncadreurs">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllEncadreurs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEncadreur">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteEncadreur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEncadreur">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateEncadreur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEncadreur">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddEncadreur" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

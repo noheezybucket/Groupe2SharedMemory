@@ -74,6 +74,107 @@ namespace AppSharedMemory.ServiceMetier {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Encadreur", Namespace="http://schemas.datacontract.org/2004/07/MetierSharedMemory.Model")]
+    [System.SerializableAttribute()]
+    public partial class Encadreur : AppSharedMemory.ServiceMetier.Personne {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecialiteField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Specialite {
+            get {
+                return this.SpecialiteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialiteField, value) != true)) {
+                    this.SpecialiteField = value;
+                    this.RaisePropertyChanged("Specialite");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Personne", Namespace="http://schemas.datacontract.org/2004/07/MetierSharedMemory.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(AppSharedMemory.ServiceMetier.Encadreur))]
+    public partial class Personne : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdPersonneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdPersonne {
+            get {
+                return this.IdPersonneField;
+            }
+            set {
+                if ((this.IdPersonneField.Equals(value) != true)) {
+                    this.IdPersonneField = value;
+                    this.RaisePropertyChanged("IdPersonne");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceMetier.IService1")]
     public interface IService1 {
@@ -89,6 +190,42 @@ namespace AppSharedMemory.ServiceMetier {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.CompositeType> GetDataUsingDataContractAsync(AppSharedMemory.ServiceMetier.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEncadreurs", ReplyAction="http://tempuri.org/IService1/GetEncadreursResponse")]
+        AppSharedMemory.ServiceMetier.Encadreur[] GetEncadreurs(string Nom, string Prenom, string Specialite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEncadreurs", ReplyAction="http://tempuri.org/IService1/GetEncadreursResponse")]
+        System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur[]> GetEncadreursAsync(string Nom, string Prenom, string Specialite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEncadreur", ReplyAction="http://tempuri.org/IService1/GetEncadreurResponse")]
+        AppSharedMemory.ServiceMetier.Encadreur GetEncadreur(System.Nullable<int> IdEncadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEncadreur", ReplyAction="http://tempuri.org/IService1/GetEncadreurResponse")]
+        System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur> GetEncadreurAsync(System.Nullable<int> IdEncadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllEncadreurs", ReplyAction="http://tempuri.org/IService1/GetAllEncadreursResponse")]
+        AppSharedMemory.ServiceMetier.Encadreur[] GetAllEncadreurs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllEncadreurs", ReplyAction="http://tempuri.org/IService1/GetAllEncadreursResponse")]
+        System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur[]> GetAllEncadreursAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteEncadreur", ReplyAction="http://tempuri.org/IService1/DeleteEncadreurResponse")]
+        bool DeleteEncadreur(System.Nullable<int> IdEncadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteEncadreur", ReplyAction="http://tempuri.org/IService1/DeleteEncadreurResponse")]
+        System.Threading.Tasks.Task<bool> DeleteEncadreurAsync(System.Nullable<int> IdEncadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEncadreur", ReplyAction="http://tempuri.org/IService1/UpdateEncadreurResponse")]
+        bool UpdateEncadreur(AppSharedMemory.ServiceMetier.Encadreur encadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEncadreur", ReplyAction="http://tempuri.org/IService1/UpdateEncadreurResponse")]
+        System.Threading.Tasks.Task<bool> UpdateEncadreurAsync(AppSharedMemory.ServiceMetier.Encadreur encadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddEncadreur", ReplyAction="http://tempuri.org/IService1/AddEncadreurResponse")]
+        bool AddEncadreur(AppSharedMemory.ServiceMetier.Encadreur encadreur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddEncadreur", ReplyAction="http://tempuri.org/IService1/AddEncadreurResponse")]
+        System.Threading.Tasks.Task<bool> AddEncadreurAsync(AppSharedMemory.ServiceMetier.Encadreur encadreur);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,6 +269,54 @@ namespace AppSharedMemory.ServiceMetier {
         
         public System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.CompositeType> GetDataUsingDataContractAsync(AppSharedMemory.ServiceMetier.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public AppSharedMemory.ServiceMetier.Encadreur[] GetEncadreurs(string Nom, string Prenom, string Specialite) {
+            return base.Channel.GetEncadreurs(Nom, Prenom, Specialite);
+        }
+        
+        public System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur[]> GetEncadreursAsync(string Nom, string Prenom, string Specialite) {
+            return base.Channel.GetEncadreursAsync(Nom, Prenom, Specialite);
+        }
+        
+        public AppSharedMemory.ServiceMetier.Encadreur GetEncadreur(System.Nullable<int> IdEncadreur) {
+            return base.Channel.GetEncadreur(IdEncadreur);
+        }
+        
+        public System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur> GetEncadreurAsync(System.Nullable<int> IdEncadreur) {
+            return base.Channel.GetEncadreurAsync(IdEncadreur);
+        }
+        
+        public AppSharedMemory.ServiceMetier.Encadreur[] GetAllEncadreurs() {
+            return base.Channel.GetAllEncadreurs();
+        }
+        
+        public System.Threading.Tasks.Task<AppSharedMemory.ServiceMetier.Encadreur[]> GetAllEncadreursAsync() {
+            return base.Channel.GetAllEncadreursAsync();
+        }
+        
+        public bool DeleteEncadreur(System.Nullable<int> IdEncadreur) {
+            return base.Channel.DeleteEncadreur(IdEncadreur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteEncadreurAsync(System.Nullable<int> IdEncadreur) {
+            return base.Channel.DeleteEncadreurAsync(IdEncadreur);
+        }
+        
+        public bool UpdateEncadreur(AppSharedMemory.ServiceMetier.Encadreur encadreur) {
+            return base.Channel.UpdateEncadreur(encadreur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateEncadreurAsync(AppSharedMemory.ServiceMetier.Encadreur encadreur) {
+            return base.Channel.UpdateEncadreurAsync(encadreur);
+        }
+        
+        public bool AddEncadreur(AppSharedMemory.ServiceMetier.Encadreur encadreur) {
+            return base.Channel.AddEncadreur(encadreur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddEncadreurAsync(AppSharedMemory.ServiceMetier.Encadreur encadreur) {
+            return base.Channel.AddEncadreurAsync(encadreur);
         }
     }
 }
